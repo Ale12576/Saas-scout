@@ -1,0 +1,25 @@
+title: "SaaS Scout"
+description: "Recensioni indipendenti di AI Tools per freelance e piccoli business italiani"
+baseurl: "/Saas-scout"
+url: "https://ale12576.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collezioni
+collections:
+  recensioni:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "recensioni"
+    values:
+      layout: "post"
