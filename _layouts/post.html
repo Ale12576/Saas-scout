@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article class="recensione">
+  <div class="container narrow">
+    
+    <header class="recensione-header">
+      <p class="recensione-meta">
+        <span class="categoria">{{ page.categoria }}</span>
+        <span class="sep">·</span>
+        <time>{{ page.date | date: "%d %B %Y" }}</time>
+        <span class="sep">·</span>
+        <span>{{ page.tempo_lettura }} min di lettura</span>
+      </p>
+      <h1 class="recensione-titolo">{{ page.title }}</h1>
+      <p class="recensione-sottotitolo">{{ page.sottotitolo }}</p>
+    </header>
+
+    {% if page.punteggio %}
+    <div class="verdict-badge {% if page.punteggio >= 7 %}verdict-good{% else %}verdict-bad{% endif %}">
+      <span class="verdict-score">{{ page.punteggio }}</span>
+      <span class="verdict-label">Verdict</span>
+    </div>
+    {% endif %}
+
+    <div class="recensione-content">
+      {{ content }}
+    </div>
+
+    <div class="newsletter-cta">
+      <h3>Vuoi scoprire il prossimo tool prima degli altri?</h3>
+      <p>Iscriviti alla newsletter. Due recensioni a settimana, nessuno spam.</p>
+      <a href="https://buttondown.email/saas-scout" class="btn btn-primary" target="_blank">Iscriviti gratuitamente</a>
+    </div>
+
+  </div>
+</article>
